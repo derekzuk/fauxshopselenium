@@ -39,9 +39,8 @@ public class IndexTest {
 		
 		System.out.println("Starting test " + new Object(){}.getClass().getEnclosingMethod().getName());
 		driver.get("localhost:8080/fauxshop/");
-		driver.findElement(By.xpath("html/body/div[1]/div[5]/div[1]/div/a/img"));
 		try {
-			element = driver.findElement(By.xpath("html/body/div[1]/div[5]/div[1]/div/a/img"));
+			element = driver.findElement(By.xpath(".//*[@id='bestSeller0']/a/img"));
 		} catch (Exception e) {
 		}
 		Assert.assertEquals("img", element.getTagName());
@@ -53,9 +52,8 @@ public class IndexTest {
 		
 		System.out.println("Starting test " + new Object(){}.getClass().getEnclosingMethod().getName());
 		driver.get("localhost:8080/fauxshop/");
-		driver.findElement(By.xpath("html/body/div[1]/div[5]/div[1]/div/div/h5"));
 		try {
-			element = driver.findElement(By.xpath("html/body/div[1]/div[5]/div[1]/div/div/h5"));
+			element = driver.findElement(By.xpath(".//*[@id='bestSeller0']/div/h5"));
 		} catch (Exception e) {
 		}
 		Assert.assertNotNull(element.getText());
@@ -81,14 +79,14 @@ public class IndexTest {
 		
 		System.out.println("Starting test " + new Object(){}.getClass().getEnclosingMethod().getName());
 		driver.get("localhost:8080/fauxshop/");
-		driver.findElement(By.xpath("html/body/div[1]/div[5]/div[1]/div/a/img")).click();
+		driver.findElement(By.xpath(".//*[@id='bestSeller0']/a/img")).click();
 		try {
 			element = driver.findElement(By.xpath("html/body/div[1]/div[3]/div[2]/div[2]/div/div[1]/h2/span[1]"));
 		} catch (Exception e) {
 		}
 		Assert.assertNotNull(element.getText());
 		System.out.println("Ending test " + new Object(){}.getClass().getEnclosingMethod().getName());
-	}	
+	}
 	
 	@AfterClass
 	public static void closeBrowser(){
