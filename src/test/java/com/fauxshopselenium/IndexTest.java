@@ -81,7 +81,7 @@ public class IndexTest {
 		driver.get("localhost:8080/fauxshop/");
 		driver.findElement(By.xpath(".//*[@id='bestSeller0']/a/img")).click();
 		try {
-			element = driver.findElement(By.xpath("html/body/div[1]/div[3]/div[2]/div[2]/div/div[1]/h2/span[1]"));
+			element = driver.findElement(By.xpath(".//*[@id='productRow']/div/div[1]/h2/span[1]"));
 		} catch (Exception e) {
 		}
 		Assert.assertNotNull(element.getText());
