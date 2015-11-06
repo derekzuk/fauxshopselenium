@@ -1,4 +1,4 @@
-package com.fauxshopselenium;
+package com.fauxshopselenium.firefox;
 
 import java.util.concurrent.TimeUnit;
 
