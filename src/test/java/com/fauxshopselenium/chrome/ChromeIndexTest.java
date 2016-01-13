@@ -68,7 +68,7 @@ public class ChromeIndexTest {
 		driver.get("localhost:8080/fauxshop/");
 		driver.findElement(By.xpath(".//*[@id='your-account']/div[1]/p/a")).click();
 		try {
-			element = driver.findElement(By.xpath("html/body/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/h3"));
+			element = driver.findElement(By.id("createAnAccount"));
 		} catch (Exception e) {
 		}
 		Assert.assertEquals("Create An Account", element.getText());

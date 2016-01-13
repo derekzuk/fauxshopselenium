@@ -27,20 +27,6 @@ public class AboutTest {
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10,  TimeUnit.SECONDS);
 	}
-	
-	@Test
-	public void aboutScreenshot(){		
-		System.out.println("Starting test " + new Object(){}.getClass().getEnclosingMethod().getName());
-		// Solution taken from the following stackoverflow reply:
-		// http://stackoverflow.com/questions/3422262/take-a-screenshot-with-selenium-webdriver
-		driver.get("localhost:8080/fauxshop/about");
-		try {			
-			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(scrFile, new File("c:\\tmp\\about_firefox.png"));		
-		} catch (Exception e) {
-		}				
-		System.out.println("Ending test " + new Object(){}.getClass().getEnclosingMethod().getName());
-	}		
 		
 	@Test
 	public void aboutTest(){

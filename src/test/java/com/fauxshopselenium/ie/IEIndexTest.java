@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -66,9 +67,9 @@ public class IEIndexTest {
 		
 		System.out.println("Starting test " + new Object(){}.getClass().getEnclosingMethod().getName());
 		driver.get("http://localhost:8080/fauxshop/");
-		driver.findElement(By.xpath(".//*[@id='your-account']/div[1]/p/a")).click();
+		driver.findElement(By.xpath(".//*[@id='your-account']/div[1]/p/a")).sendKeys(Keys.ENTER);
 		try {
-			element = driver.findElement(By.xpath("html/body/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/h3"));
+			element = driver.findElement(By.id("createAnAccount"));
 		} catch (Exception e) {
 		}
 		Assert.assertEquals("Create An Account", element.getText());
@@ -82,7 +83,7 @@ public class IEIndexTest {
 		driver.get("http://localhost:8080/fauxshop/");
 		driver.findElement(By.xpath(".//*[@id='bestSeller0']/a/img")).click();
 		try {
-			element = driver.findElement(By.xpath(".//*[@id='productRow']/div/div[1]/h2/span[1]"));
+			element = driver.findElement(By.id("productRow"));
 		} catch (Exception e) {
 		}
 		Assert.assertNotNull(element.getText());

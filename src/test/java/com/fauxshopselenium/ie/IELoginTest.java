@@ -50,9 +50,9 @@ public class IELoginTest {
 		try {
 			driver.findElement(By.name("email")).clear();
 			driver.findElement(By.name("email")).sendKeys("test@test.com");
-			driver.findElement(By.id("submitRegistration")).sendKeys(Keys.ENTER);
+			driver.findElement(By.id("submitRegistration")).submit();
 			wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("firstName"))));
-			element = driver.findElement(By.xpath("html/body/div[1]/div[3]/div[2]/div[2]/div/h3"));
+			element = driver.findElement(By.id("personalInformation"));
 		} catch (Exception e) {
 		}		
 		Assert.assertEquals("Personal Information", element.getText());
